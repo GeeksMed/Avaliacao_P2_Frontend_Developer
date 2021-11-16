@@ -1,10 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Profit</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css')}}">
 </head>
 <body>
-$END$
+    <div class="page">
+        <div class="header">
+            <div class="logo">
+                <img src="{{url_for('static', filename='/img/logo.png')}}" alt="Logo">
+            </div>
+            <div class="buscar">
+                <form id="busca_form" action="{{ url_for('busca') }}" method="get" enctype="application/x-www-form-urlencoded" onsubmit="return buscar()">
+                    <input type="text" id="busca" name="busca" placeholder="O que está procurando?">
+                    <img src="{{url_for('static', filename='/img/find.png')}}" alt="Buscar">
+                </form>
+            </div>
+            <div class="conta_linguagem">
+                <div class="conta_chart">
+                        <a class="conta">
+                        <img src="{{url_for('static', filename='/img/user.png')}}" alt="User">
+                        <div>Minha Conta</div>
+                    </a>
+                    <a class="chart">
+                        <img src="{{url_for('static', filename='/img/cart.png')}}" alt="User">
+                        <div class="quant">1</div>
+                    </a>
+                </div>
+                <div class="linguagem">
+                    <a class="img_op">
+                        <img src="{{url_for('static', filename='/img/br.png')}}" alt="PORTUGUES">
+                    </a>
+                    <a class="img_op">
+                        <img src="{{url_for('static', filename='/img/es.png')}}" alt="ESPANHOL">
+                    </a>
+                    <a class="img_op">
+                        <img src="{{url_for('static', filename='/img/en.png')}}" alt="ENGLISH">
+                    </a>
+                </div>
+
+            </div>
+        </div>
+        <div class="ad">
+
+        </div>
+        <div class="products">
+
+        </div>
+        <div class="footer">
+
+        </div>
+    </div>
 </body>
 </html>
