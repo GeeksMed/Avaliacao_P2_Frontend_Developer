@@ -1,0 +1,14 @@
+{% for produto in product_list%}
+<div class="produto">
+    <img id="prod_img" src="{{produto.get_image()}}" alt="add">
+    <h2 class="prod_nome">{{produto.get_name()}}</h2>
+    <div class="estrelas">estrelas</div>
+    <p class="old_price">de R$ {{produto.get_oldPrice()}}</p>
+    <p class="price">por R$ {{produto.get_price()}}</p>
+    <p class="parc">ou em {{produto.get_count()}}x de R$ {{produto.get_value()}}</p>
+    <a class="botao_add_chart">
+        <img src="{{url_for('static', filename='/img/add_chart.png')}}" alt="add">
+        <p>COMPRAR</p>
+    </a>
+</div>
+{% endfor %}

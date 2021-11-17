@@ -7,14 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css')}}">
 </head>
-<body>
+<body onload="carrega_produto()">
     <div class="page">
         <div class="header">
             <div class="logo">
                 <img src="{{url_for('static', filename='/img/logo.png')}}" alt="Logo">
             </div>
             <div class="buscar">
-                <form id="busca_form" action="{{ url_for('busca') }}" method="get" enctype="application/x-www-form-urlencoded" onsubmit="return buscar()">
+                <form id="busca_form" action="" method="get" enctype="application/x-www-form-urlencoded" onsubmit="">
                     <input type="text" id="busca" name="busca" placeholder="O que está procurando?">
                     <img src="{{url_for('static', filename='/img/find.png')}}" alt="Buscar">
                 </form>
@@ -61,14 +61,20 @@
             </div>
         </div>
         <div class="products">
-
-        </div>
-        <div class="footer">
-            <div>
-                <h1>Localização</h1>
+            <div class="titulo">
+                <h1>Produtos</h1>
             </div>
             <div class="traco"></div>
+            <div id="produtos">
+                <H1>carregando</H1>
+            </div>
+        </div>
+        <div class="footer">
             <div class="footer_info">
+                <div>
+                    <h1>Localização</h1>
+                </div>
+                <div class="traco"></div>
                 <div class="cidades">
                     <div class="cidade">
                         <h1>São Paulo</h1>
@@ -85,19 +91,36 @@
                         <p>+55 11 3333 3333</p>
                     </div>
                 </div>
-                <div class="botoes_contato">
-                    <a class="botao_cont">
-                        <img src="{{url_for('static', filename='/img/user.png')}}" alt="User">
-                        <p>ENTRE EM CONTATO</p>
-                    </a>
-                    <a class="botao_cont">
-                        <img src="{{url_for('static', filename='/img/user.png')}}" alt="User">
-                        <p>FALE COM O NOSSO CONSULTOR ONLINE</p>
-                    </a>
+            </div>
+            <div class="botoes_contato">
+                <a class="botao_cont">
+                    <img src="{{url_for('static', filename='/img/mail.png')}}" alt="email">
+                    <p>ENTRE EM CONTATO</p>
+                </a>
+                <a class="botao_cont">
+                    <img src="{{url_for('static', filename='/img/contact.png')}}" alt="call">
+                    <p>FALE COM O NOSSO<br>CONSULTOR ONLINE</p>
+                </a>
+            </div>
+            <div class="marca">
+                <div class="marca_branca">
+                    <img src="{{url_for('static', filename='/img/creat.png')}}" alt="parceria">
                 </div>
-                <div></div>
             </div>
         </div>
     </div>
 </body>
+<script>
+    function carrega_produto() {
+        let xhr_produto = new XMLHttpRequest();
+        xhr_produto.open("GET", "/produtos");
+        xhr_produto.send(null);
+        xhr_produto.onreadystatechange = function() {
+            if(xhr_produto.readyState == 4 && xhr_produto.status == 200) {
+                document.getElementById("produtos").innerHTML = xhr_produto.response;
+            }
+        }
+        return false;
+    }
+</script>
 </html>
