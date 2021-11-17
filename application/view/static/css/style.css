@@ -5,13 +5,13 @@ body{
 .page{
     display: grid;
     grid-template-areas: "header" "ad" "products" "footer";
-    grid-template-rows: 1fr 3fr 4fr 1fr;
+    grid-template-rows: 1fr 5fr 6fr 3fr;
 }
 
 .header{
     grid-area: "header";
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     flex-direction: row;
     align-items: center;
 }
@@ -23,7 +23,7 @@ body{
 .buscar{
     border: none;
     border-bottom: 2px solid black;
-    width: 35vw;
+    width: 40vw;
     display: flex;
     flex-direction: column;
     align-items: stretch;
@@ -52,11 +52,114 @@ body{
     margin: .5vw;
 }
 
+.conta_linguagem{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 25vw;
+}
 
+.conta_linguagem hr{
+    width: 0vw;
+    height: 4vh;
+    background-color: black;
+}
+
+.conta_chart{
+    display: flex;
+    align-items: center;
+}
+
+.conta{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 10vw;
+}
+
+.conta img{width: 2vw;}
+
+.chart{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 4vw;
+}
+
+.chart img{width: 2vw;}
+
+.quant{
+    background-color: #2EC4B6;
+    border-radius: 1vw;
+    width: 1.3vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.linguagem{
+    display: flex;
+    align-items: center;
+    width: 11vw;
+    justify-content: space-evenly;
+}
+
+.img_op img{
+    width: 2vw;
+}
 
 .ad{
     grid-area: "ad";
-    color: #011627;
+    background-color: #011627;
+    display: grid;
+    grid-template-areas: "text banner";
+    grid-template-columns: 1fr 1fr;
+    height: 50vh;
+}
+
+.texto_ad{
+    grid-area: "text";
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+
+.texto_interno_ad{
+    margin: 0 1vw 0 0;
+}
+
+.texto_interno_ad h1{
+    margin: 0 0 1.5vh 0;
+    color: #fff;
+    font-family: system-ui;
+}
+
+.traco{
+    width: 4vw;
+    height: 0.5vh;
+    background-color: #FF9F1C;
+}
+
+.left{
+    margin: 0 1vw 0 0;
+}
+
+.imagem_ad{
+    grid-area: "banner";
+    display: flex;
+    background-image: url('../img/banner.jpeg');
+    background-repeat: round;
+}
+
+.right{
+    width: -webkit-fill-available;
+    height: -webkit-fill-available;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #2ec4b675;
 }
 
 .products{
@@ -65,6 +168,55 @@ body{
 
 .footer{
     grid-area: "footer";
+    background-color: #011627;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    font-family: system-ui;
+    color: white;
+}
+
+.footer h1{
+    font-size: 1.5vw;
+}
+
+.footer_info{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.cidades{
+    display: flex;
+    font-size: 1vw;
+}
+
+.cidade{
+    margin: 0 1vw 0 0;
+}
+
+.botoes_contato{
+    display: flex;
+    flex-direction: column;
+}
+
+.botao_cont{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: #FF9F1C;
+    border-radius: 1vw;
+    border: .2vw solid white;
+    align-items: center;
+}
+
+.botao_cont img{
+    width: 2vw;
+    height: 2vw;
+    margin: .5vw;
+}
+
+.botao_cont p{
+    margin: 0;
 }
 
 @media screen and (max-width: 360px) {
